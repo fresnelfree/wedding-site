@@ -826,7 +826,7 @@ address strong {
     inset: 0;
     min-height: 100%;
     opacity: 1;
-    filter: grayscale(1) brightness(1.18);
+    filter: grayscale(1) brightness(1.90);
   }
 
   .hero-panel {
@@ -834,7 +834,7 @@ address strong {
     min-height: 760px;
     justify-items: center;
     padding: 130px 28px 82px;
-    background: linear-gradient(180deg, rgba(3, 4, 5, 0.08), rgba(3, 4, 5, 0.68) 98%, rgba(3, 4, 5, 0.9));
+    background: linear-gradient(180deg, rgba(3, 4, 5, 0.1), rgba(3, 4, 5, 0.68) 70%, rgba(3, 4, 5, 0.9));
   }
 
   .split-section,
