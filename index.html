@@ -1,245 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wedding - Ditrich and Dunelle</title>
+  <title>Dunelle &amp; Ditrich - Mariage</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a class="brand" href="#home">Avala</a>
-      <a href="#location">Contact &amp; Location</a>
-      <a href="#timeline">Timeline</a>
+    <a class="mobile-brand" href="#accueil" aria-label="Accueil">D|D</a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a class="is-active" href="#accueil">Accueil</a>
+      <a href="#histoire">Notre Histoire</a>
+      <a href="#grand-jour">Le Grand Jour</a>
+      <a class="brand-mark" href="#accueil" aria-label="Accueil">
+        <span>D</span><i></i><span>D</span>
+      </a>
+      <a href="#lieu">Lieu &amp; Accès</a>
+      <a href="#rsvp">RSVP</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#cadeau">Cadeau</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="rsvp-link" href="#rsvp">RSVP</a>
+    <a class="header-rsvp" href="#rsvp">RSVP</a>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="dust dust-left" aria-hidden="true"></div>
-      <div class="dust dust-right" aria-hidden="true"></div>
-      <img class="hero-floral hero-floral-left" src="assets/hero-floral-left.jpg" alt="" aria-hidden="true" />
-      <img class="hero-floral hero-floral-right" src="assets/hero-floral-right.jpg" alt="" aria-hidden="true" />
-
-      <div class="hero-card reveal">
-        <svg class="frame frame-one" viewBox="0 0 100 100" aria-hidden="true">
-          <polygon points="48 4 82 14 96 47 82 84 47 96 14 82 4 48 17 15" />
-        </svg>
-        <svg class="frame frame-two" viewBox="0 0 100 100" aria-hidden="true">
-          <polygon points="52 5 86 18 94 54 76 88 39 94 10 72 6 35 24 9" />
-        </svg>
-
-        <p class="kicker">Save the date</p>
-        <h1>Ditrich <br/> and <br/>Dunelle</h1>
-        <p class="hero-date"><span>May</span>12<span>2022</span></p>
-      </div>
-    </section>
-
-    <section id="about" class="intro">
-      <img class="intro-photo intro-photo-left reveal" src="assets/couple-portrait.jpg" alt="Oscar and Vivienne portrait" />
-
-      <div class="intro-copy reveal">
-        <p class="kicker">Dear friends and family</p>
-        <h2>We Are Getting<br />Married</h2>
-        <p>
-          Dear friends and family, it would be our pleasure to welcome you to the ceremony
-          and celebration of our marriage at Lorem Ipsum Place on Sunday May 12th 2022.
-        </p>
-        <a class="text-link" href="#details">View Details</a>
-      </div>
-
-      <img class="intro-photo intro-photo-right reveal" src="assets/bride-bouquet.jpg" alt="Vivienne holding a bouquet" />
-    </section>
-
-    <section id="timeline" class="timeline section-space">
-      <div class="section-heading reveal">
-        <p class="kicker">Friday to Sunday</p>
-        <h2>Ceremony Timeline</h2>
-      </div>
-
-      <div class="timeline-track">
-        <article class="timeline-row reveal">
-          <figure class="timeline-art">
-            <img src="assets/timeline-bouquet.jpg" alt="Wedding bouquet" />
-          </figure>
-          <div class="timeline-copy">
-            <p class="time">At 02:00 PM</p>
-            <h3>Wedding Reception</h3>
-            <p>
-              Lorem ipsum harmonica to provide a relaxed symptoms for light floral
-              overtones, iterative approaches to corporate strategy foster.
-            </p>
-            <a class="text-link" href="#details">View More</a>
-          </div>
-        </article>
-
-        <article class="timeline-row timeline-row-reverse reveal">
-          <figure class="timeline-art">
-            <img src="assets/timeline-rings.jpg" alt="Wedding rings" />
-          </figure>
-          <div class="timeline-copy">
-            <p class="time">At 04:00 PM</p>
-            <h3>Wedding Ceremony</h3>
-            <p>
-              Organically grow the holistic world view of disruptive innovation via
-              workplace diversity and empowerment, bring to the table win-win.
-            </p>
-            <a class="text-link" href="#details">View More</a>
-          </div>
-        </article>
-
-        <article class="timeline-row reveal">
-          <figure class="timeline-art">
-            <img src="assets/timeline-champagne.jpg" alt="Champagne glasses" />
-          </figure>
-          <div class="timeline-copy">
-            <p class="time">At 05:00 PM</p>
-            <h3>Now let's Party</h3>
-            <p>
-              At the end of the day, going forward, a new normal that has evolved
-              from generation X is on the runway heading towards a streamlined.
-            </p>
-            <a class="text-link" href="#details">View More</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="countdown-section section-space">
-      <div class="section-heading reveal">
-        <h2>We Can't Wait to See You</h2>
-      </div>
-
-      <div class="countdown reveal" aria-label="Decorative countdown">
-        <div class="count-item"><strong>0</strong><span>Days</span></div>
-        <div class="count-item"><strong>00</strong><span>Hours</span></div>
-        <div class="count-item"><strong>00</strong><span>Minutes</span></div>
-        <div class="count-item"><strong>00</strong><span>Seconds</span></div>
-      </div>
-    </section>
-
-    <section id="rsvp" class="rsvp-banner" aria-label="RSVP">
-      <div class="visually-hidden">
-        <h2>Respond Please</h2>
-        <a href="mailto:paolo.lucia@wedding.com">RSVP Now</a>
-      </div>
-    </section>
-
-    <section id="details" class="details section-space">
-      <div class="dust details-dust" aria-hidden="true"></div>
-      <div class="section-heading reveal">
-        <p class="kicker">Friday to Sunday</p>
-        <h2>Three Days Of Love,<br />Music &amp; Fun</h2>
-      </div>
-
-      <div class="details-grid">
-        <article class="info-card reveal">
-          <p class="card-label">Venue</p>
-          <h3>The Orchard</h3>
-          <p>At the base of Mt. Warning lies a beautiful macadamia orchard set along the stunning Clarrie Hall.</p>
-          <a class="text-link" href="#location">View More</a>
-        </article>
-
-        <article class="info-card reveal">
-          <p class="card-label">Accommodation</p>
-          <h3>Where to Stay</h3>
-          <p>We have come up with accommodation options, and you can take your pick for whatever suits you.</p>
-          <a class="text-link" href="#location">View Options</a>
-        </article>
-
-        <article class="info-card reveal">
-          <p class="card-label">The Location</p>
-          <h3>Getting There</h3>
-          <p>2 hrs from Brisbane and 1.5 hrs from the Sunshine Coast. E27 Yallingup Road, Eungella NSW 2484.</p>
-          <a class="text-link" href="#location">View Map</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="location" class="location split-section section-space">
-      <div class="split-copy reveal">
-        <h2>Wedding Location</h2>
-        <p class="small-label">Address</p>
-        <p class="address">678 Westside Road, Avala Hills, MA, USA</p>
-        <p class="small-label">How to get there</p>
-        <p>
-          At the base of Mt. Warning lies a beautiful macadamia orchard, set along the
-          Clarrie River. Taking seamless key performance indicators offline to maximise
-          the long tail.
-        </p>
-        <div class="link-row">
-          <a class="text-link" href="#">More Details</a>
-          <a class="text-link" href="#">View Map</a>
+  <main>
+    <section id="accueil" class="hero">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-panel">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Mariage</p>
+          <h1>Dunelle<br /><span>&amp;</span><br />Ditrich</h1>
+          <p class="date">Samedi 31 octobre 2026</p>
+          <p class="venue">Kesh Reception, Saint-Priest</p>
+          <blockquote>
+            Parce que les plus beaux souvenirs se créent avec ceux que l’on aime,
+            nous serions honorés de partager cette journée avec vous.
+          </blockquote>
         </div>
       </div>
-
-      <figure class="shape-image reveal">
-        <img src="assets/location-flower.jpg" alt="Wedding location floral detail" />
-      </figure>
+      <a class="scroll-cue" href="#histoire" aria-label="Voir la suite"></a>
     </section>
 
-    <section class="registry split-section section-space">
-      <figure class="shape-image reveal">
-        <img src="assets/gift-box.jpg" alt="Wrapped wedding gift" />
-      </figure>
-
-      <div class="split-copy reveal">
-        <p class="kicker left-kicker">We love presents</p>
-        <h2>Gift Registry</h2>
+    <section id="histoire" class="story split-section">
+      <div class="story-copy reveal">
+        <p class="section-label">Notre Histoire</p>
+        <h2>Notre Rencontre</h2>
         <p>
-          The best present you could possibly give us is the celebration of our marriage.
-          However, if you'd like to spoil us, we've picked out a few items, activities,
-          and charities that pique our interests.
+          C’est en septembre 2020, sur les bancs de l’université, que nos chemins se
+          sont croisés, comme deux lignes destinées à s’effleurer sans imaginer ce
+          qu’elles allaient devenir.
         </p>
-        <a class="text-link" href="#">Registry on Thankful</a>
+        <p>
+          D’abord une amitié simple, douce et lumineuse, faite de rires partagés, de
+          regards complices et de petits instants du quotidien. Puis, presque
+          naturellement, quelque chose de plus fort s’est installé entre nous - une
+          évidence discrète, mais impossible à ignorer.
+        </p>
+        <p>
+          Au fil des années, nous avons avancé ensemble, traversant les saisons de la
+          vie, construisant des souvenirs précieux et apprenant à grandir côte à côte.
+        </p>
+        <p>
+          Aujourd’hui, nos chemins ne font plus que se rejoindre : ils continuent
+          ensemble, avec la certitude heureuse d’écrire la suite de notre histoire à deux.
+        </p>
+      </div>
+      <figure class="story-photo reveal">
+        <img src="assets/story-couple.jpg" alt="Silhouette élégante des mariés" />
+      </figure>
+    </section>
+
+    <section id="grand-jour" class="day-section section-pad">
+      <div class="section-heading reveal">
+        <p class="section-label">Le Grand Jour</p>
+        <h2>Programme</h2>
+      </div>
+
+      <div class="events-grid">
+        <article class="event-card reveal">
+          <svg class="event-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M8 54h48M14 54V25l18-11 18 11v29M22 54V34h20v20M26 25h12M32 14V7M27 10h10" />
+          </svg>
+          <h3>Cérémonie</h3>
+          <p class="event-time">11h30</p>
+          <p class="event-place">Mairie annexe Lyon 5<br />Vieux Lyon</p>
+        </article>
+
+        <article class="event-card reveal">
+          <svg class="event-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M21 8c-4 10-5 20-2 28 2 5 7 7 12 5M21 8h22M43 8c4 10 5 20 2 28-2 5-7 7-12 5M31 41v13M33 41v13M23 54h18" />
+          </svg>
+          <h3>Vin d’honneur</h3>
+          <p class="event-time">13h00</p>
+          <p class="event-place">Kesh Reception</p>
+        </article>
+
+        <article class="event-card reveal">
+          <svg class="event-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M23 13v38M16 13v16c0 5 3 8 7 8s7-3 7-8V13M43 14c7 8 7 22 0 30v9M42 14v39M35 53h14" />
+          </svg>
+          <h3>Dîner &amp; Soirée</h3>
+          <p class="event-time">16h30</p>
+          <p class="event-place">Kesh Reception</p>
+        </article>
+      </div>
+
+      <div class="dress-code reveal">
+        <svg class="dress-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M31 17c0-5 8-5 8 0 0 6-8 4-8 10M32 27 14 40h36L32 27ZM18 40l-5 11h38l-5-11" />
+        </svg>
+        <p class="section-label">Code vestimentaire</p>
+        <p>
+          Une tenue simple et chic est recommandée pour célébrer cette journée avec
+          nous. Nous vous invitons à privilégier des vêtements élégants, dans lesquels
+          vous vous sentirez à l’aise pour profiter pleinement de la journée et de la soirée.
+        </p>
       </div>
     </section>
 
-    <section class="gallery section-space">
-      <div class="section-heading reveal">
-        <p class="kicker">Our wedding</p>
-        <h2>In Pictures</h2>
+    <section id="lieu" class="location-section">
+      <div class="location-copy reveal">
+        <p class="section-label">Lieu &amp; Accès</p>
+        <h2>Adresse de la réception</h2>
+        <address>
+          <strong>Kesh Reception</strong>
+          146 Route de Grenoble<br />
+          69800 Saint-Priest
+        </address>
+        <div class="parking">
+          <p class="section-label">Stationnement</p>
+          <p>Un parking gratuit est disponible sur place.</p>
+        </div>
       </div>
+      <a class="map-card reveal" href="https://www.google.com/maps/search/?api=1&query=Kesh%20Reception%20146%20Route%20de%20Grenoble%2069800%20Saint-Priest" target="_blank" rel="noreferrer" aria-label="Ouvrir l'adresse dans Google Maps">
+        <img src="assets/map-dark.jpg" alt="Carte du secteur de Kesh Reception à Saint-Priest" />
+      </a>
+    </section>
 
-      <div class="gallery-grid reveal">
-        <img src="assets/gallery-01.jpg" alt="Wedding table with flowers" />
-        <img src="assets/gallery-02.jpg" alt="Oscar and Vivienne smiling" />
-        <img src="assets/gallery-03.jpg" alt="Champagne glasses at the reception" />
-        <img src="assets/gallery-04.jpg" alt="Outdoor ceremony arch" />
-        <img src="assets/gallery-05.jpg" alt="Wedding thank you favors" />
-        <img src="assets/gallery-06.jpg" alt="Couple walking in a field" />
+    <section id="rsvp" class="rsvp-section section-pad">
+      <div class="ornament ornament-left" aria-hidden="true"></div>
+      <div class="ornament ornament-right" aria-hidden="true"></div>
+      <div class="rsvp-content reveal">
+        <p class="section-label">RSVP</p>
+        <h2>Vous êtes de la fête ?</h2>
+        <p>Confirmez votre présence en quelques secondes via notre formulaire.</p>
+        <a class="gold-button" href="#contact">Je réponds à l’invitation</a>
       </div>
+    </section>
+
+    <section id="galerie" class="gallery-section">
+      <div class="section-heading reveal">
+        <p class="section-label">Galerie</p>
+        <h2>Moments choisis</h2>
+      </div>
+      <div class="gallery-grid reveal">
+        <img src="assets/gallery-01.jpeg" alt="Portrait des mariés dans une ambiance nocturne" />
+        <img src="assets/gallery-02.jpg" alt="Décoration florale et chandelles" />
+        <img src="assets/gallery-03.jpg" alt="Mains des mariés et alliance" />
+        <img src="assets/gallery-04.jpg" alt="Salle de réception décorée" />
+        <img src="assets/gallery-05.jpg" alt="Dunelle et Ditrich face à face" />
+        <img src="assets/gallery-06.jpg" alt="Table dressée pour la réception" />
+        <img src="assets/gallery-07.jpeg" alt="Table dressée pour la réception" />
+        <img src="assets/gallery-08.jpeg" alt="Table dressée pour la réception" />
+      </div>
+      <a class="outline-button" href="#contact">Voir plus de photos</a>
+    </section>
+
+    <section id="cadeau" class="gift-section section-pad">
+      <div class="gift-icon reveal" aria-hidden="true"></div>
+      <div class="gift-copy reveal">
+        <p class="section-label">Cadeau de Mariage</p>
+        <h2>Votre présence est déjà le plus beau des cadeaux</h2>
+        <p>
+          Pour ceux qui souhaitent nous témoigner leur affection, une contribution libre
+          est possible via PayPal.
+        </p>
+      </div>
+      <a class="paypal-button reveal" href="#" aria-label="Lien PayPal à renseigner">
+        Contribuer via PayPal
+      </a>
     </section>
   </main>
 
-  <footer class="site-footer section-space">
-    <div class="dust footer-dust-left" aria-hidden="true"></div>
-    <div class="dust footer-dust-right" aria-hidden="true"></div>
-    <h2>Oscar and Vivienne</h2>
-    <p>We can't wait to see you</p>
-
-    <div class="footer-grid">
-      <div>
-        <p class="small-label">Call Us</p>
-        <a href="tel:+14553567">+1 455 3 567</a>
-      </div>
-      <div>
-        <p class="small-label">Write To Us</p>
-        <a href="mailto:paolo.lucia@wedding.com">paolo.lucia@wedding.com</a>
-      </div>
-      <div>
-        <p class="small-label">Follow Us</p>
-        <a href="#">F</a>
-        <a href="#">I</a>
-      </div>
+  <footer id="contact" class="site-footer">
+    <div class="brand-mark footer-mark" aria-hidden="true">
+      <span>D</span><i></i><span>D</span>
     </div>
+    <p>Dunelle &amp; Ditrich</p>
+    <p>31.10.2026</p>
   </footer>
 </body>
 </html>
