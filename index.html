@@ -12,7 +12,12 @@
 <body>
   <header class="site-header">
     <a class="mobile-brand" href="#accueil" aria-label="Accueil">D|D</a>
-    <nav class="main-nav" aria-label="Navigation principale">
+    <button class="mobile-menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">
+      <span>Menu</span>
+      <i aria-hidden="true"></i>
+      <i aria-hidden="true"></i>
+    </button>
+    <nav id="site-menu" class="main-nav" aria-label="Navigation principale">
       <a class="is-active" href="#accueil">Accueil</a>
       <a href="#histoire">Notre Histoire</a>
       <a href="#grand-jour">Le Grand Jour</a>
@@ -194,5 +199,30 @@
     <p>Dunelle &amp; Ditrich</p>
     <p>31.10.2026</p>
   </footer>
+  <script>
+    const header = document.querySelector(".site-header");
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    const menuLinks = document.querySelectorAll("#site-menu a");
+
+    function setMenuOpen(isOpen) {
+      header.classList.toggle("menu-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("menu-lock", isOpen);
+    }
+
+    menuToggle.addEventListener("click", () => {
+      setMenuOpen(!header.classList.contains("menu-open"));
+    });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    });
+  </script>
 </body>
 </html>
