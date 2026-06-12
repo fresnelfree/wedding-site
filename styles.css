@@ -178,7 +178,7 @@ address {
 }
 
 .hero-panel {
-  min-height: 760px;
+  min-height: 600px;
   display: grid;
   align-items: center;
   padding: 120px clamp(42px, 7vw, 132px) 72px clamp(26px, 4vw, 72px);
@@ -901,14 +901,17 @@ address strong {
   }
 
   .hero-content {
+    position: absolute;
+    top: 78px;
     max-width: 330px;
   }
 
   .hero h1 {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .date {
+    margin-top: 190px;
     font-size: 16px;
   }
 
