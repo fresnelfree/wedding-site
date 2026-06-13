@@ -229,9 +229,26 @@
           avec nous après cette journée. Votre présence compte déjà beaucoup, vos mots
           donneront encore plus de valeur à ces instants.
         </p>
-        <button class="gold-button guestbook-button" type="button">Livre d'or</button>
+        <button class="gold-button guestbook-button" type="button" data-open-guestbook>Livret d'or</button>
       </div>
     </section>
+
+    <div class="guestbook-modal" data-guestbook-modal aria-hidden="true">
+      <div class="guestbook-dialog" role="dialog" aria-modal="true" aria-labelledby="guestbook-modal-title">
+        <button class="guestbook-close" type="button" data-close-guestbook aria-label="Fermer le livret d'or">×</button>
+        <form class="guestbook-form" data-guestbook-form>
+          <h2 id="guestbook-modal-title" class="sr-only">Livret d'or</h2>
+          <label class="sr-only" for="guest-name">Nom &amp; Prénom</label>
+          <input id="guest-name" name="name" type="text" placeholder="Nom & Prénom" autocomplete="name" required />
+
+          <label class="sr-only" for="guest-message">Ton petit message</label>
+          <textarea id="guest-message" name="message" placeholder="Ton petit message" rows="4" required></textarea>
+
+          <button class="guestbook-submit" type="submit">Envoyer</button>
+          <p class="guestbook-status" data-guestbook-status aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
 
     <section id="cadeau" class="gift-section section-pad">
       <div class="gift-icon reveal" aria-hidden="true"></div>
@@ -275,7 +292,24 @@
       </section>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    const emailJsConfig = {
+      publicKey: "YHjzcc1p34nMtR5v0",
+      serviceId: "service_wedding_d_d",
+      templateId: "template_fagl3oh",
+    };
+
+    const isEmailJsConfigured = Object.values(emailJsConfig).every(
+      (value) => !value.startsWith("REMPLACE_PAR_")
+    );
+
+    if (isEmailJsConfigured && window.emailjs) {
+      emailjs.init({
+        publicKey: emailJsConfig.publicKey,
+      });
+    }
+
     const header = document.querySelector(".site-header");
     const menuToggle = document.querySelector(".mobile-menu-toggle");
     const menuLinks = document.querySelectorAll("#site-menu a");
@@ -297,6 +331,82 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         setMenuOpen(false);
+        setGuestbookOpen(false);
+      }
+    });
+
+    const guestbookModal = document.querySelector("[data-guestbook-modal]");
+    const openGuestbookButton = document.querySelector("[data-open-guestbook]");
+    const closeGuestbookButton = document.querySelector("[data-close-guestbook]");
+    const guestbookForm = document.querySelector("[data-guestbook-form]");
+    const guestbookNameInput = document.querySelector("#guest-name");
+    const guestbookSubmit = document.querySelector(".guestbook-submit");
+    const guestbookStatus = document.querySelector("[data-guestbook-status]");
+
+    function setGuestbookOpen(isOpen) {
+      if (isOpen) {
+        setMenuOpen(false);
+      }
+
+      guestbookModal?.classList.toggle("is-open", isOpen);
+      guestbookModal?.setAttribute("aria-hidden", String(!isOpen));
+      document.body.classList.toggle("menu-lock", isOpen);
+
+      if (isOpen) {
+        setTimeout(() => guestbookNameInput?.focus(), 120);
+      }
+    }
+
+    openGuestbookButton?.addEventListener("click", () => setGuestbookOpen(true));
+    closeGuestbookButton?.addEventListener("click", () => setGuestbookOpen(false));
+
+    guestbookModal?.addEventListener("click", (event) => {
+      if (event.target === guestbookModal) {
+        setGuestbookOpen(false);
+      }
+    });
+
+    guestbookForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!isEmailJsConfigured || !window.emailjs) {
+        if (guestbookStatus) {
+          guestbookStatus.textContent = "EmailJS n'est pas encore configuré.";
+        }
+        return;
+      }
+
+      if (guestbookStatus) {
+        guestbookStatus.textContent = "";
+      }
+
+      if (guestbookSubmit) {
+        guestbookSubmit.disabled = true;
+        guestbookSubmit.textContent = "Envoi...";
+      }
+
+      try {
+        await emailjs.sendForm(
+          emailJsConfig.serviceId,
+          emailJsConfig.templateId,
+          guestbookForm
+        );
+
+        if (guestbookStatus) {
+          guestbookStatus.textContent = "Message envoyé. Merci !";
+        }
+
+        guestbookForm.reset();
+        setTimeout(() => setGuestbookOpen(false), 700);
+      } catch (error) {
+        if (guestbookStatus) {
+          guestbookStatus.textContent = "Le message n'a pas pu être envoyé. Merci de réessayer.";
+        }
+      } finally {
+        if (guestbookSubmit) {
+          guestbookSubmit.disabled = false;
+          guestbookSubmit.textContent = "Envoyer";
+        }
       }
     });
 
