@@ -24,11 +24,10 @@
       <a class="brand-mark" href="#accueil" aria-label="Accueil">
         <span>D</span><i></i><span>D</span>
       </a>
-      <a href="#lieu">Lieu &amp; Accès</a>
       <a href="#rsvp">RSVP</a>
       <a href="#galerie">Galerie</a>
+      <a href="#livre-or">Livret d'or</a>
       <a href="#cadeau">Cadeau</a>
-      <a href="#contact">Contact</a>
     </nav>
     <a class="header-rsvp" href="#rsvp">RSVP</a>
   </header>
@@ -38,6 +37,24 @@
       <div class="hero-image" aria-hidden="true"></div>
       <div class="hero-panel">
         <div class="hero-content reveal">
+          <div class="compteur-minute">
+            <div class="countdown-box">
+              <strong data-countdown-unit="days">0</strong>
+              <span>Jours</span>
+            </div>
+            <div class="countdown-box">
+              <strong data-countdown-unit="hours">0</strong>
+              <span>Heures</span>
+            </div>
+            <div class="countdown-box">
+              <strong data-countdown-unit="minutes">0</strong>
+              <span>Mins</span>
+            </div>
+            <div class="countdown-box">
+              <strong data-countdown-unit="seconds">0</strong>
+              <span>Sec</span>
+            </div>
+          </div>
           <p class="eyebrow">Mariage</p>
           <h1>Dunelle<br /><span>&amp;</span><br />Ditrich</h1>
           <p class="date">Samedi 31 octobre 2026</p>
@@ -51,33 +68,69 @@
       <a class="scroll-cue" href="#histoire" aria-label="Voir la suite"></a>
     </section>
 
-    <section id="histoire" class="story split-section">
-      <div class="story-copy reveal">
+    <section id="histoire" class="story story-slider-section section-pad">
+      <div class="section-heading reveal">
         <p class="section-label">Notre Histoire</p>
         <h2>Notre Rencontre</h2>
-        <p>
-          C’est en septembre 2020, sur les bancs de l’université, que nos chemins se
-          sont croisés, comme deux lignes destinées à s’effleurer sans imaginer ce
-          qu’elles allaient devenir.
-        </p>
-        <p>
-          D’abord une amitié simple, douce et lumineuse, faite de rires partagés, de
-          regards complices et de petits instants du quotidien. Puis, presque
-          naturellement, quelque chose de plus fort s’est installé entre nous - une
-          évidence discrète, mais impossible à ignorer.
-        </p>
-        <p>
-          Au fil des années, nous avons avancé ensemble, traversant les saisons de la
-          vie, construisant des souvenirs précieux et apprenant à grandir côte à côte.
-        </p>
-        <p>
-          Aujourd’hui, nos chemins ne font plus que se rejoindre : ils continuent
-          ensemble, avec la certitude heureuse d’écrire la suite de notre histoire à deux.
-        </p>
       </div>
-      <figure class="story-photo reveal">
-        <img src="assets/story-couple.jpg" alt="Silhouette élégante des mariés" />
-      </figure>
+
+      <div class="story-slider reveal" aria-label="Notre histoire en images">
+        <div class="story-slides">
+          <article class="story-slide is-active" data-story-slide>
+            <img src="assets/story-couple.jpg" alt="Dunelle et Ditrich dans une ambiance intime" />
+            <div class="story-card-copy">
+              <p>
+                C’est en septembre 2020, sur les bancs de l’université, que nos chemins se
+                sont croisés, comme deux lignes destinées à s’effleurer sans imaginer ce
+                qu’elles allaient devenir.
+              </p>
+            </div>
+          </article>
+
+          <article class="story-slide" data-story-slide>
+            <img src="assets/gallery-01.jpeg" alt="Moment complice de Dunelle et Ditrich" />
+            <div class="story-card-copy">
+              <p>
+                D’abord une amitié simple, douce et lumineuse, faite de rires partagés, de
+                regards complices et de petits instants du quotidien. Puis, presque
+                naturellement, quelque chose de plus fort s’est installé entre nous - une
+                évidence discrète, mais impossible à ignorer.
+              </p>
+            </div>
+          </article>
+
+          <article class="story-slide" data-story-slide>
+            <img src="assets/gallery-05.jpg" alt="Dunelle et Ditrich face à face" />
+            <div class="story-card-copy">
+              <p>
+                Au fil des années, nous avons avancé ensemble, traversant les saisons de la
+                vie, construisant des souvenirs précieux et apprenant à grandir côte à côte.
+              </p>
+            </div>
+          </article>
+
+          <article class="story-slide" data-story-slide>
+            <img src="assets/gallery-08.jpeg" alt="Souvenir partagé pendant une célébration" />
+            <div class="story-card-copy">
+              <p>
+                Aujourd’hui, nos chemins ne font plus que se rejoindre : ils continuent
+                ensemble, avec la certitude heureuse d’écrire la suite de notre histoire à deux.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="story-slider-controls" aria-label="Contrôles du slider">
+          <button class="story-arrow" type="button" data-story-prev aria-label="Paragraphe précédent">Précédent</button>
+          <div class="story-dots" aria-label="Pagination du slider">
+            <button class="is-active" type="button" data-story-dot="0" aria-label="Afficher le paragraphe 1"></button>
+            <button type="button" data-story-dot="1" aria-label="Afficher le paragraphe 2"></button>
+            <button type="button" data-story-dot="2" aria-label="Afficher le paragraphe 3"></button>
+            <button type="button" data-story-dot="3" aria-label="Afficher le paragraphe 4"></button>
+          </div>
+          <button class="story-arrow" type="button" data-story-next aria-label="Paragraphe suivant">Suivant</button>
+        </div>
+      </div>
     </section>
 
     <section id="grand-jour" class="day-section section-pad">
@@ -89,20 +142,18 @@
       <div class="events-grid">
         <article class="event-card reveal">
           <svg class="event-icon" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M8 54h48M14 54V25l18-11 18 11v29M22 54V34h20v20M26 25h12M32 14V7M27 10h10" />
+            <ellipse cx="24" cy="36" rx="18" ry="11" transform="rotate(-14 24 36)" />
+            <ellipse cx="24" cy="36" rx="13" ry="7" transform="rotate(-14 24 36)" />
+            <ellipse cx="40" cy="39" rx="18" ry="11" transform="rotate(16 40 39)" />
+            <ellipse cx="40" cy="39" rx="13" ry="7" transform="rotate(16 40 39)" />
+            <path d="M31 25c5 2 8 7 7 12M24 49c-6 0-12-2-15-6M47 29c5 2 9 6 10 11" />
           </svg>
-          <h3>Cérémonie</h3>
+          <h3>Mairie</h3>
           <p class="event-time">11h30</p>
-          <p class="event-place">Mairie annexe Lyon 5<br />Vieux Lyon</p>
-        </article>
-
-        <article class="event-card reveal">
-          <svg class="event-icon" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M21 8c-4 10-5 20-2 28 2 5 7 7 12 5M21 8h22M43 8c4 10 5 20 2 28-2 5-7 7-12 5M31 41v13M33 41v13M23 54h18" />
-          </svg>
-          <h3>Vin d’honneur</h3>
-          <p class="event-time">13h00</p>
-          <p class="event-place">Kesh Reception</p>
+          <p class="event-place">Mairie annexe du 5e arrondissement, Vieux Lyon </p>
+          <a style="color: revert; text-decoration: underline" target="_blank" href="https://www.google.com/maps/place/5+Pl.+du+Petit+Coll%C3%A8ge,+69005+Lyon/@45.7637829,4.8249779,17z/data=!3m1!4b1!4m6!3m5!1s0x47f4ebaa853dd8c5:0xf653757fc5ef71a4!8m2!3d45.7637829!4d4.8275528!16s%2Fg%2F11pw1xw0g0?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D">
+            5 Pl. du Petit Collège, 69005 Lyon
+          </a>
         </article>
 
         <article class="event-card reveal">
@@ -110,8 +161,11 @@
             <path d="M23 13v38M16 13v16c0 5 3 8 7 8s7-3 7-8V13M43 14c7 8 7 22 0 30v9M42 14v39M35 53h14" />
           </svg>
           <h3>Dîner &amp; Soirée</h3>
-          <p class="event-time">16h30</p>
+          <p class="event-time">16h</p>
           <p class="event-place">Kesh Reception</p>
+          <a style="color: revert; text-decoration: underline" target="_blank" href="https://www.google.com/maps/place/146+Rte+de+Grenoble,+69800+Saint-Priest/@45.7120316,4.9719544,17z/data=!3m1!4b1!4m6!3m5!1s0x47f4c423110b49f5:0x1d4bdddd87431bef!8m2!3d45.7120316!4d4.9745293!16s%2Fg%2F11c5gpwyk4?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D">
+            146 Rte de Grenoble, 69800 Saint-Priest
+          </a>
         </article>
       </div>
 
@@ -128,25 +182,6 @@
       </div>
     </section>
 
-    <section id="lieu" class="location-section">
-      <div class="location-copy reveal">
-        <p class="section-label">Lieu &amp; Accès</p>
-        <h2>Adresse de la réception</h2>
-        <address>
-          <strong>Kesh Reception</strong>
-          146 Route de Grenoble<br />
-          69800 Saint-Priest
-        </address>
-        <div class="parking">
-          <p class="section-label">Stationnement</p>
-          <p>Un parking gratuit est disponible sur place.</p>
-        </div>
-      </div>
-      <a class="map-card reveal" href="https://www.google.com/maps/search/?api=1&query=Kesh%20Reception%20146%20Route%20de%20Grenoble%2069800%20Saint-Priest" target="_blank" rel="noreferrer" aria-label="Ouvrir l'adresse dans Google Maps">
-        <img src="assets/map-dark.jpg" alt="Carte du secteur de Kesh Reception à Saint-Priest" />
-      </a>
-    </section>
-
     <section id="rsvp" class="rsvp-section section-pad">
       <div class="ornament ornament-left" aria-hidden="true"></div>
       <div class="ornament ornament-right" aria-hidden="true"></div>
@@ -154,26 +189,48 @@
         <p class="section-label">RSVP</p>
         <h2>Vous êtes de la fête ?</h2>
         <p>Confirmez votre présence en quelques secondes via notre formulaire.</p>
-        <a class="gold-button" href="#contact">Je réponds à l’invitation</a>
+        <a class="gold-button" href="#rsvp">Je réponds à l’invitation</a>
       </div>
     </section>
 
     <section id="galerie" class="gallery-section">
       <div class="section-heading reveal">
         <p class="section-label">Galerie</p>
-        <h2>Moments choisis</h2>
       </div>
-      <div class="gallery-grid reveal">
-        <img src="assets/gallery-01.jpeg" alt="Portrait des mariés dans une ambiance nocturne" />
-        <img src="assets/gallery-02.jpg" alt="Décoration florale et chandelles" />
-        <img src="assets/gallery-03.jpg" alt="Mains des mariés et alliance" />
-        <img src="assets/gallery-04.jpg" alt="Salle de réception décorée" />
-        <img src="assets/gallery-05.jpg" alt="Dunelle et Ditrich face à face" />
-        <img src="assets/gallery-06.jpg" alt="Table dressée pour la réception" />
-        <img src="assets/gallery-07.jpeg" alt="Table dressée pour la réception" />
-        <img src="assets/gallery-08.jpeg" alt="Table dressée pour la réception" />
+      <div class="gallery-frame reveal">
+        <button class="gallery-arrow gallery-arrow-prev" type="button" data-gallery-prev aria-label="Photo précédente">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <div class="gallery-grid" data-gallery-slider>
+          <img class="is-active" src="assets/gallery-01.jpeg" alt="Portrait des mariés dans une ambiance nocturne" data-gallery-slide />
+          <img src="assets/gallery-02.jpg" alt="Décoration florale et chandelles" data-gallery-slide />
+          <img src="assets/gallery-03.jpg" alt="Mains des mariés et alliance" data-gallery-slide />
+          <img src="assets/gallery-04.jpg" alt="Salle de réception décorée" data-gallery-slide />
+          <img src="assets/gallery-05.jpg" alt="Dunelle et Ditrich face à face" data-gallery-slide />
+          <img src="assets/gallery-06.jpg" alt="Table dressée pour la réception" data-gallery-slide />
+          <img src="assets/gallery-07.jpeg" alt="Table dressée pour la réception" data-gallery-slide />
+          <img src="assets/gallery-08.jpeg" alt="Table dressée pour la réception" data-gallery-slide />
+        </div>
+        <button class="gallery-arrow gallery-arrow-next" type="button" data-gallery-next aria-label="Photo suivante">
+          <span aria-hidden="true">›</span>
+        </button>
       </div>
-      <a class="outline-button" href="#contact">Voir plus de photos</a>
+    </section>
+
+    <section id="livre-or" class="guestbook-section section-pad">
+      <div class="guestbook-image reveal">
+        <img src="assets/livre_or.png" alt="Souvenir de mariage et message d'invités" />
+      </div>
+      <div class="guestbook-copy reveal">
+        <p class="section-label">Livre d'or</p>
+        <h2>Un mot pour nous accompagner</h2>
+        <p>
+          Laissez-nous un message, un souvenir, un conseil ou quelques mots qui resteront
+          avec nous après cette journée. Votre présence compte déjà beaucoup, vos mots
+          donneront encore plus de valeur à ces instants.
+        </p>
+        <button class="gold-button guestbook-button" type="button">Livre d'or</button>
+      </div>
     </section>
 
     <section id="cadeau" class="gift-section section-pad">
@@ -182,22 +239,41 @@
         <p class="section-label">Cadeau de Mariage</p>
         <h2>Votre présence est déjà le plus beau des cadeaux</h2>
         <p>
-          Pour ceux qui souhaitent nous témoigner leur affection, une contribution libre
-          est possible via PayPal.
+          si vous souhaitez accompagner ce moment d’une attention, la cagnotte de mariage est à
+          votre disposition pour recueillir vos mots et vos gestes du cœur, en toute simplicité et selon vos envies
         </p>
       </div>
-      <a class="paypal-button reveal" href="#" aria-label="Lien PayPal à renseigner">
-        Contribuer via PayPal
-      </a>
+      <a class="gold-button gift-button reveal" href="https://www.leetchi.com/fr/c/dunelle-ditrich-une-nouvelle-vie-a-deux-1406490?utm_source=copylink&utm_medium=social_sharing" target="_blank" rel="noreferrer">Cagnotte</a>
     </section>
   </main>
 
-  <footer id="contact" class="site-footer">
-    <div class="brand-mark footer-mark" aria-hidden="true">
-      <span>D</span><i></i><span>D</span>
+  <footer class="site-footer">
+    <div class="footer-panel">
+      <section class="footer-card" aria-labelledby="arrival-title">
+        <div class="footer-icons" aria-hidden="true">
+          <svg class="footer-icon" viewBox="0 0 24 24">
+            <path d="M7 17h10M8 20l2-3M16 17l2 3M7 4h10a3 3 0 0 1 3 3v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V7a3 3 0 0 1 3-3ZM8 8h8M8 12h2M14 12h2" />
+          </svg>
+          <svg class="footer-icon" viewBox="0 0 24 24">
+            <path d="M3 11l18-7-7 18-3-8-8-3ZM11 14l10-10" />
+          </svg>
+        </div>
+        <h2 id="arrival-title">Arriver à Lyon</h2>
+        <ul class="footer-list">
+          <li>Gare de Lyon Part-Dieu</li>
+          <li>Gare de Lyon Perrache</li>
+          <li>Lyon Saint Exupéry Airport</li>
+        </ul>
+      </section>
+
+      <section class="footer-card" aria-labelledby="discover-title">
+        <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3.6 9h16.8M3.6 15h16.8M12 3c2.2 2.3 3.4 5.3 3.4 9S14.2 18.7 12 21M12 3C9.8 5.3 8.6 8.3 8.6 12S9.8 18.7 12 21" />
+        </svg>
+        <h2 id="discover-title">Découvrir Lyon</h2>
+        <a class="footer-button" href="decouvrir-lyon.html">Explorer</a>
+      </section>
     </div>
-    <p>Dunelle &amp; Ditrich</p>
-    <p>31.10.2026</p>
   </footer>
   <script>
     const header = document.querySelector(".site-header");
@@ -223,6 +299,217 @@
         setMenuOpen(false);
       }
     });
+
+    const weddingDate = new Date("2026-10-31T11:30:00+01:00").getTime();
+    const countdownUnits = {
+      days: document.querySelector('[data-countdown-unit="days"]'),
+      hours: document.querySelector('[data-countdown-unit="hours"]'),
+      minutes: document.querySelector('[data-countdown-unit="minutes"]'),
+      seconds: document.querySelector('[data-countdown-unit="seconds"]'),
+    };
+
+    function updateCountdown() {
+      const remaining = Math.max(0, weddingDate - Date.now());
+      const totalSeconds = Math.floor(remaining / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      countdownUnits.days.textContent = days;
+      countdownUnits.hours.textContent = String(hours).padStart(2, "0");
+      countdownUnits.minutes.textContent = String(minutes).padStart(2, "0");
+      countdownUnits.seconds.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const storySlides = Array.from(document.querySelectorAll("[data-story-slide]"));
+    const storyDots = Array.from(document.querySelectorAll("[data-story-dot]"));
+    const storyPrev = document.querySelector("[data-story-prev]");
+    const storyNext = document.querySelector("[data-story-next]");
+    let activeStorySlide = 0;
+    let storySliderTimer;
+
+    function showStorySlide(index) {
+      if (!storySlides.length) return;
+
+      activeStorySlide = (index + storySlides.length) % storySlides.length;
+      storySlides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === activeStorySlide);
+      });
+      storyDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === activeStorySlide);
+      });
+    }
+
+    function startStorySlider() {
+      clearInterval(storySliderTimer);
+      storySliderTimer = setInterval(() => {
+        showStorySlide(activeStorySlide + 1);
+      }, 5000);
+    }
+
+    function goToStorySlide(index) {
+      showStorySlide(index);
+      startStorySlider();
+    }
+
+    storyPrev?.addEventListener("click", () => goToStorySlide(activeStorySlide - 1));
+    storyNext?.addEventListener("click", () => goToStorySlide(activeStorySlide + 1));
+    storyDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        goToStorySlide(Number(dot.dataset.storyDot));
+      });
+    });
+
+    startStorySlider();
+
+    const gallerySlider = document.querySelector("[data-gallery-slider]");
+    const galleryOriginalSlides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
+    const galleryPrev = document.querySelector("[data-gallery-prev]");
+    const galleryNext = document.querySelector("[data-gallery-next]");
+    const galleryMediaQuery = window.matchMedia("(max-width: 1080px)");
+    let gallerySlides = [...galleryOriginalSlides];
+    let activeGalleryPage = 0;
+    let gallerySliderTimer;
+    let galleryLoopResetTimer;
+    let galleryLoopResetHandler;
+    const galleryTransitionDuration = 1150;
+
+    function getGalleryPageSize() {
+      return galleryMediaQuery.matches ? 1 : 4;
+    }
+
+    function getGalleryPageCount() {
+      return Math.ceil(galleryOriginalSlides.length / getGalleryPageSize());
+    }
+
+    function buildGalleryLoop() {
+      if (!gallerySlider) return;
+
+      gallerySlider.querySelectorAll("[data-gallery-clone]").forEach((clone) => clone.remove());
+      const pageSize = getGalleryPageSize();
+      galleryOriginalSlides.slice(0, pageSize).forEach((slide) => {
+        const clone = slide.cloneNode(true);
+        clone.removeAttribute("data-gallery-slide");
+        clone.removeAttribute("class");
+        clone.setAttribute("data-gallery-clone", "");
+        gallerySlider.appendChild(clone);
+      });
+
+      gallerySlides = Array.from(gallerySlider.querySelectorAll("img"));
+    }
+
+    function moveGalleryToSlide(slideIndex, animate = true) {
+      if (!gallerySlider || !gallerySlides.length) return;
+
+      const targetSlide = gallerySlides[slideIndex] || gallerySlides[0];
+
+      if (!animate) {
+        gallerySlider.classList.remove("is-sliding");
+        gallerySlider.style.transition = "none";
+        gallerySlider.style.transform = `translate3d(-${targetSlide.offsetLeft}px, 0, 0)`;
+        gallerySlider.offsetWidth;
+        gallerySlider.style.transition = "";
+        return;
+      }
+
+      gallerySlider.style.transition = "";
+      gallerySlider.classList.add("is-sliding");
+      gallerySlider.style.transform = `translate3d(-${targetSlide.offsetLeft}px, 0, 0)`;
+    }
+
+    function clearGalleryLoopReset() {
+      clearTimeout(galleryLoopResetTimer);
+
+      if (galleryLoopResetHandler && gallerySlider) {
+        gallerySlider.removeEventListener("transitionend", galleryLoopResetHandler);
+        galleryLoopResetHandler = undefined;
+      }
+    }
+
+    function showGalleryPage(index, animate = true) {
+      clearGalleryLoopReset();
+      if (!gallerySlides.length) return;
+
+      const pageSize = getGalleryPageSize();
+      const pageCount = getGalleryPageCount();
+
+      if (index >= pageCount) {
+        activeGalleryPage = 0;
+        moveGalleryToSlide(galleryOriginalSlides.length, animate);
+
+        galleryLoopResetHandler = (event) => {
+          if (event.target !== gallerySlider || event.propertyName !== "transform") return;
+
+          clearGalleryLoopReset();
+          gallerySlider?.classList.remove("is-sliding");
+          moveGalleryToSlide(0, false);
+        };
+
+        gallerySlider?.addEventListener("transitionend", galleryLoopResetHandler);
+        galleryLoopResetTimer = setTimeout(() => {
+          clearGalleryLoopReset();
+          moveGalleryToSlide(0, false);
+        }, galleryTransitionDuration + 120);
+        return;
+      }
+
+      activeGalleryPage = (index + pageCount) % pageCount;
+      moveGalleryToSlide(activeGalleryPage * pageSize, animate);
+    }
+
+    function stopGallerySlider() {
+      clearInterval(gallerySliderTimer);
+    }
+
+    function startGallerySlider() {
+      stopGallerySlider();
+
+      const pageCount = getGalleryPageCount();
+      if (pageCount <= 1) return;
+
+      gallerySliderTimer = setInterval(() => {
+        showGalleryPage(activeGalleryPage + 1);
+      }, 4500);
+    }
+
+    function goToGalleryPage(index) {
+      showGalleryPage(index);
+      startGallerySlider();
+    }
+
+    galleryPrev?.addEventListener("click", () => goToGalleryPage(activeGalleryPage - 1));
+    galleryNext?.addEventListener("click", () => goToGalleryPage(activeGalleryPage + 1));
+
+    gallerySlider?.addEventListener("transitionend", (event) => {
+      if (event.target === gallerySlider && event.propertyName === "transform") {
+        gallerySlider.classList.remove("is-sliding");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        goToGalleryPage(activeGalleryPage - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        goToGalleryPage(activeGalleryPage + 1);
+      }
+    });
+
+    galleryMediaQuery.addEventListener("change", () => {
+      clearGalleryLoopReset();
+      activeGalleryPage = 0;
+      buildGalleryLoop();
+      showGalleryPage(activeGalleryPage, false);
+      startGallerySlider();
+    });
+    buildGalleryLoop();
+    showGalleryPage(activeGalleryPage, false);
+    startGallerySlider();
   </script>
 </body>
 </html>
