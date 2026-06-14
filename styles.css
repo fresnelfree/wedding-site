@@ -19,6 +19,7 @@
   --serif: "Cinzel", Georgia, serif;
   --body: "Montserrat", "Segoe UI", Arial, sans-serif;
   --display: "Cormorant Garamond", Georgia, serif;
+  --script: "Great Vibes", "Cormorant Garamond", cursive;
 }
 
 * {
@@ -181,7 +182,64 @@ address {
 
 .hero-image {
   min-height: 760px;
-  background:  url("assets/hero-couple.png") center bottom / contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 118px clamp(32px, 6vw, 92px) 82px;
+}
+
+.hero-portrait {
+  position: relative;
+  width: min(470px, 84%);
+  text-align: center;
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 7px;
+  border: 1px solid var(--gold-dark);
+  border-radius: 50%;
+  background: var(--champagne);
+  box-shadow:
+    0 0 0 4px #ffffff,
+    0 0 0 6px rgba(201, 154, 88, 0.6),
+    0 22px 46px rgba(79, 71, 63, 0.16);
+}
+
+.hero-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  z-index: 2;
+  border: 1px solid rgba(255, 253, 248, 0.9);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 34%;
+}
+
+.hero-flourish {
+  position: absolute;
+  right: -66px;
+  bottom: -12px;
+  z-index: 3;
+  width: 178px;
+  height: 136px;
+  color: var(--gold);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
 }
 
 .hero-panel {
@@ -202,37 +260,48 @@ address {
 .compteur-minute {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  width: min(420px, 100%);
-  margin: 0 auto 28px;
+  gap: 0;
+  width: min(460px, 100%);
+  margin: 0 auto 32px;
 }
 
 .countdown-box {
+  position: relative;
   display: grid;
   place-items: center;
-  min-height: 76px;
-  padding: 10px 6px 9px;
+  min-height: 54px;
+  padding: 0 14px;
   color: var(--ink);
-  background: rgba(255, 253, 248, 0.86);
-  border: 1px solid rgba(154, 107, 50, 0.42);
-  box-shadow: 0 12px 30px rgba(79, 71, 63, 0.12);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.countdown-box + .countdown-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  bottom: 9px;
+  width: 1px;
+  background: rgba(154, 107, 50, 0.56);
 }
 
 .countdown-box strong {
   color: var(--gold-dark);
   font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(30px, 3vw, 42px);
   font-weight: 600;
   line-height: 1;
 }
 
 .countdown-box span {
-  margin-top: 5px;
+  margin-top: 4px;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -260,23 +329,19 @@ address {
   background: currentColor;
 }
 
-.hero h1 {
-  margin: 22px 0 20px;
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: clamp(54px, 5.3vw, 92px);
-  font-weight: 500;
-  letter-spacing: 0.08em;
+.hero-title {
+  margin: 18px 0 0;
+  color: var(--gold);
+  font-family: var(--script);
+  font-size: clamp(48px, 6vw, 78px);
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 0.9;
-  text-transform: uppercase;
-}
-
-.hero h1 span {
-  color: var(--gold-dark);
-  font-size: 0.68em;
+  text-transform: none;
 }
 
 .hero-details {
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -1383,31 +1448,40 @@ address strong {
 
   .hero {
     grid-template-columns: 1fr;
-    background:#FFFFFF;
+    min-height: auto;
+    background: #ffffff;
     border-bottom: 1px solid var(--line-light);
   }
 
   .hero-image {
-    position: absolute;
-    inset: 116px 0 auto;
-    min-height: 100%;
-    opacity: 1;
-    background: url("assets/hero-couple.png") center top / min(82vw, 360px) auto no-repeat;
+    min-height: auto;
+    padding: 104px 28px 18px;
+  }
+
+  .hero-portrait {
+    width: min(340px, 76vw);
+  }
+
+  .hero-flourish {
+    right: -46px;
+    bottom: -10px;
+    width: 130px;
+    height: 104px;
   }
 
   .hero-panel {
     position: relative;
-    min-height: 760px;
+    min-height: auto;
     justify-items: center;
-    padding: 130px 28px 82px;
+    padding: 18px 28px 82px;
     background: transparent;
   }
 
   .countdown-box {
     color: var(--ink);
-    background: rgba(255, 253, 248, 0.82);
-    border-color: rgba(154, 107, 50, 0.42);
-    box-shadow: 0 12px 34px rgba(79, 71, 63, 0.12);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
   }
 
   .countdown-box strong {
@@ -1419,25 +1493,19 @@ address strong {
   }
 
   .hero .eyebrow {
-    color: #ffffff;
-    text-shadow:
-      0 1px 2px rgba(3, 4, 5, 0.82),
-      0 0 14px rgba(3, 4, 5, 0.42);
+    color: var(--gold-dark);
+    text-shadow: none;
   }
 
-  .hero h1 {
-    color: #e0b66d;
-    text-shadow:
-      0 2px 4px rgba(3, 4, 5, 0.88),
-      0 10px 24px rgba(3, 4, 5, 0.44);
+  .hero-title {
+    color: var(--gold);
+    font-size: clamp(42px, 12vw, 62px);
+    text-shadow: none;
   }
 
-  .hero h1 span,
   .venue {
-    color: #ffffff;
-    text-shadow:
-      0 1px 3px rgba(3, 4, 5, 0.86),
-      0 0 14px rgba(3, 4, 5, 0.38);
+    color: var(--gold-dark);
+    text-shadow: none;
   }
 
   .hero-details {
@@ -1600,40 +1668,72 @@ address strong {
 
   .hero,
   .hero-panel {
-    min-height: 720px;
+    min-height: auto;
+  }
+
+  .hero-image {
+    padding: 84px 18px 10px;
+  }
+
+  .hero-portrait {
+    width: min(286px, 76vw);
+  }
+
+  .hero-photo-frame {
+    padding: 5px;
+    box-shadow:
+      0 0 0 3px #ffffff,
+      0 0 0 5px rgba(201, 154, 88, 0.58),
+      0 16px 34px rgba(79, 71, 63, 0.14);
+  }
+
+  .hero-photo-frame::before {
+    inset: 6px;
+  }
+
+  .hero-flourish {
+    right: -34px;
+    bottom: -8px;
+    width: 104px;
+    height: 82px;
   }
 
   .hero-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 78px;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
     width: min(370px, calc(100vw - 36px));
     max-width: none;
     margin: 0 auto;
   }
 
   .compteur-minute {
-    gap: 5px;
-    margin-bottom: 18px;
+    gap: 0;
+    margin-bottom: 24px;
   }
 
   .countdown-box {
-    min-height: 58px;
-    padding: 8px 3px 7px;
+    min-height: 44px;
+    padding: 0 8px;
   }
 
   .countdown-box strong {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .countdown-box span {
-    font-size: 9px;
-    letter-spacing: 0.04em;
+    font-size: 7px;
+    letter-spacing: 0.03em;
   }
 
-  .hero h1 {
-    font-size: 35px;
+  .countdown-box + .countdown-box::before {
+    top: 5px;
+    bottom: 7px;
+  }
+
+  .hero-title {
+    font-size: 42px;
   }
 
   .hero-details {
@@ -1674,7 +1774,7 @@ address strong {
   }
 
   .eyebrow{
-    margin-top: 170px;
+    margin-top: 0;
     font-weight: bold;
   }
 
